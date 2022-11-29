@@ -10,15 +10,17 @@ public class Program6 {
     {
         // Code here
 		int length=nums.length;
-		int count=-2;
+		int count=0;
 		for(int i=0;i<length-1;i++) {
 			int index=i;
 			
 			for(int j=i+1;j<length;j++) {
 				if(nums[j]<nums[index]) {
 					index=j;
-					count++;
 				}
+			}
+			if(index!=i) {
+				count++;
 			}
 			int temp=nums[i];
 			nums[i]=nums[index];
