@@ -1,25 +1,24 @@
 package array2;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Program10 {
 
 	public static void main(String[] args) {
-		String a = "geeksforgeeks", b = "forgeeksgeeks";
-		System.out.println(isAnagram(a,b));
+		int array[]={1,5,2,3,4};
+		System.out.println(longestIncreasingSubSequence(array));
 	}
-	public static boolean isAnagram(String a,String b)
-    {
-		int length1=a.length();
-		int length2=b.length();
-		if(length1!=length2) 
-			return false;
-       char[] array1=a.toCharArray();
-       char[] array2=b.toCharArray();
-       Arrays.sort(array1);Arrays.sort(array2);
-       if(String.valueOf(array1).compareTo(String.valueOf(array2))==0)
-    	   return true;
-        
-       return false;
-    }
+	private static int longestIncreasingSubSequence(int[] array) {
+		// TODO Auto-generated method stub
+		int length=array.length;
+		List<Integer> list=new ArrayList<>();
+		list.add(array[0]);
+		for(int i=1;i<length;i++) {
+			if(array[i-1]<array[i])
+				list.add(array[i]);
+		}
+		return list.size();
+	}
+	
 }

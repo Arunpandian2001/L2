@@ -1,0 +1,35 @@
+package pattern.stars;
+
+import java.util.Scanner;
+
+public class Program7 {
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("rows:");
+		int size=scanner.nextInt();
+		printPattern(size);
+		scanner.close();
+	}
+
+	private static void printPattern(int size) {
+		// TODO Auto-generated method stub
+		for(int row=0;row<size-1;row++) {
+			
+			for(int space=0;space<size-row-1;space++) {
+				System.out.print(" ");
+			}
+			for(int col=0;col<=row*2;col++) {
+				if(col==0 || col==row*2) 
+					System.out.print("*");
+				else
+					System.out.print(" ");
+			}
+			
+			System.out.println();
+		}
+		
+		for(int col=0;col<(size*2)-1;col++) {
+			System.out.print("*");
+		}
+	}
+}
